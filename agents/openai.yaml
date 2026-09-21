@@ -1,0 +1,7 @@
+interface:
+  display_name: "Yichen Doc"
+  short_description: "Evidence-driven decision research writing"
+  brand_color: "#0F766E"
+  default_prompt: "Use $yichen-doc to turn this decision question into an evidence-led research memo."
+policy:
+  allow_implicit_invocation: true
