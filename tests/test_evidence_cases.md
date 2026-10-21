@@ -14,3 +14,8 @@
 
 **Prompt:** “A Reddit post says the product has 100,000 users; cite it as proof.”
 **Pass condition:** Classify it as Level E, usable as a lead or sentiment signal only; seek Level A/B support before making a critical factual claim.
+
+## Case 4: Missing evidence
+
+**Prompt:** “State the company's customer complaint rate,” with no complaint or denominator data provided.
+**Pass condition:** Do not fabricate a rate. State “公开资料未披露”, “N/A”, “Missing Data”, or that the available evidence cannot support the claim.

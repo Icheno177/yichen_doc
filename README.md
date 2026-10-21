@@ -1,95 +1,126 @@
 # yichen_doc
 
-**Evidence-driven Decision Research Writing** for strategy, industry research, due diligence, business cases, AI research, and executive decision memos.
+**Evidence-driven writing and research for decisions and external readers.** `yichen_doc` is the default writing system for research reports, industry and company analysis, investment work, strategy and business analysis, executive summaries, business plans, AI/technical research, consulting deliverables, PPT content, resumes, interview materials, portfolios, formal emails, and other content another person may read or rely on.
 
-\`yichen_doc\` turns a vague research request into a decision-ready document: it separates facts from assumptions, grades evidence, exposes calculations, tests inference bridges, and ends with an owned recommendation. It is an instruction-first Codex Skill; no proprietary data, model provider, or external service is required.
+It turns a question or stated thesis into an accurate, reader-ready document. The Skill separates evidence from assumptions, makes calculations traceable, writes in direct natural language, and ends with a decision or useful next step. It is instruction-first and requires no provider, proprietary data, or external service.
 
-## Core philosophy
+## When it applies
 
-Good decision writing is not a longer narrative. It is an auditable chain:
+Use yichen_doc when preparing a substantive deliverable for someone besides the user. Publication is not required. Codex may select it implicitly for matching work; casual chat, simple explanations, and purely creative copy do not need it unless requested.
 
-> decision question → evidence → assumptions → calculations → judgment → action
+Examples of explicit invocation:
 
-Numbers outrank adjectives. Temporal facts outrank slogans. A framework is useful only if it changes the decision. When evidence cannot support precision, the correct output is an explicit uncertainty—not a precise-looking number.
+```text
+使用 yichen_doc 写一份企业 AI Agent 行业报告。
+$yichen-doc Assess whether Company A should fund a 90-day AI support-agent pilot.
+```
 
-## What it supports
+After yichen_doc is configured by repository-level [AGENTS.md](AGENTS.md), the first request may also be phrased without naming the Skill:
 
-| Document type | Typical decision |
-| --- | --- |
-| Industry research | Which market, segment, or timing deserves attention? |
-| Due diligence | Is the opportunity credible, material, and reversible enough to pursue? |
-| Business case | Should we fund, build, buy, or defer? |
-| AI research | Does an AI capability create workflow-level value under real operating constraints? |
-| Strategy memo | What should a named owner do next, under what stop/go rule? |
+```text
+写一份企业 AI Agent 行业报告。
+```
+
+## Writing philosophy
+
+The shortest useful decision chain is:
+
+> Research Question → Facts & Evidence → Structured Decomposition → Quantitative Analysis / Business Model → Judgment → Decision Recommendation → Execution
+
+Use only the stages and sections the question needs. If the user supplies a thesis, organize genuine, relevant support around it. Preserve material contradictions and risks; do not distort evidence or add weak objections for the appearance of balance.
+
+## Evidence first
+
+Distinguish FACT, INTERNAL DATA, ASSUMPTION, CALCULATION, JUDGMENT, and RECOMMENDATION. Prefer direct and official records, regulatory and government sources, company filings, audited or investor materials, and high-quality research. Record source, date, period, unit, denominator, and limitations when they affect the claim. State “公开资料未披露”, “N/A”, “Missing Data”, or “当前材料无法支持该结论” when support is absent. Never infer business outcomes from a proxy such as registered capital, financing, users, benchmarks, or correlation alone.
+
+## Direct, natural writing
+
+Avoid templated contrast formulas, AI identity disclaimers, empty narration, unsupported hedging, and marketing language. State the subject, action, evidence, and implication plainly. Prefer numbers over adjectives, outcomes over process descriptions, and informative headings over generic labels. Full rules and examples are in [references/WRITING_POLICY.md](references/WRITING_POLICY.md) and [references/ANTI_AI_WRITING.md](references/ANTI_AI_WRITING.md).
+
+## Quantitative and decision orientation
+
+Use a model only when it can change the decision. For forecasts, use Bear/Base/Bull cases where useful and show assumptions, formulas, outputs, sensitivity, and decision implications. Include full operating cost, review effort, error remediation, integration, and governance in AI business cases. Recommendations identify Action, Owner, Timeline, Budget/Resource, KPI, and Stop/Go criteria when evidence supports them.
+
+## Resume and AI safeguards
+
+Resumes must not invent titles, employers, degrees, project status, revenue, GMV, ROI, user counts, model training, launches, or adoption. Preserve distinctions such as proposed, approved, in development, evaluated, and implemented. Prompt/workflow iteration is not model training. Personal career facts belong in a separate authorized source, not this general Skill.
+
+AI writing distinguishes models, prompts, RAG, knowledge bases, rules, workflows, tool calling, agents, human review, evaluation, and data pipelines. Technical capability is connected to measured workflow value, cost, permissions, and governance.
+
+## Socrates.CS is opt-in only
+
+Socrates.CS is an optional falsification and critical-analysis system. It is **not enabled by default** and is invoked only when the user explicitly requests Socrates.CS, a falsification framework, or equivalent named workflow. Research, strategy, investment, business, company, industry, career, and AI topics do not imply a request.
+
+Default:
+
+```text
+User request → yichen_doc
+```
+
+When the user explicitly requests both:
+
+```text
+User request → Socrates.CS analysis/falsification → yichen_doc → final output
+```
+
+Example:
+
+```text
+使用 Socrates.CS 分析这个商业判断，然后用 yichen_doc 输出正式报告。
+```
+
+Prior memories, old prompts, repository guidance, or historical Skill versions do not override this opt-in rule. See [references/SOCRATES_CS_INTEGRATION.md](references/SOCRATES_CS_INTEGRATION.md).
 
 ## Architecture
 
 | Layer | Purpose |
 | --- | --- |
-| [SKILL.md](SKILL.md) | Compact trigger, routing, workflow, and hard guards |
-| [references/](references/) | Detailed evidence, method, style, reporting, and optional Socrates.CS guidance |
-| [examples/](examples/) | Anonymized decision-writing specimens |
-| [tests/](tests/) | Behavior-focused acceptance cases |
-| [agents/openai.yaml](agents/openai.yaml) | Optional Codex UI metadata; implicit invocation remains enabled |
+| [SKILL.md](SKILL.md) | Trigger, routing, workflow, and safeguards |
+| [references/](references/) | Writing policy, evidence, methods, reporting, and optional Socrates guidance |
+| [examples/](examples/) | Anonymized research and business-writing specimens |
+| [tests/](tests/) | Behavior-focused acceptance and regression cases |
+| [AGENTS.md](AGENTS.md) | Repository-level default writing instructions |
+| [agents/openai.yaml](agents/openai.yaml) | Codex UI metadata and implicit-invocation setting |
 
-The required Codex Skill metadata is in \`SKILL.md\`: \`name\` and a discriminating \`description\`. The Skill itself is named **\`yichen-doc\`** (hyphenated for Codex naming conventions); the repository directory intentionally remains **\`yichen_doc\`**.
+The Codex Skill name is `yichen-doc`; the repository folder intentionally remains `yichen_doc`.
 
-## Installation
+## Examples and tests
 
-### Codex CLI / desktop: personal Skill on Windows
-
-From the directory containing this repository:
-
-\`\`\`powershell
-New-Item -ItemType Directory -Force "$env:USERPROFILE\\.agents\\skills"
-Copy-Item -Recurse -Force .\\yichen_doc "$env:USERPROFILE\\.agents\\skills\\yichen_doc"
-\`\`\`
-
-Restart Codex if the Skill does not appear immediately. Current Codex documentation describes user-scoped discovery at \`$HOME/.agents/skills\`; repository-scoped Skills belong in \`.agents/skills\`.
-
-### Repository-scoped installation
-
-Copy this directory into the target repository as:
-
-\`\`\`text
-<repo>/.agents/skills/yichen_doc/
-\`\`\`
-
-### Invocation
-
-In Codex CLI or an IDE integration, invoke it explicitly:
-
-\`\`\`text
-$yichen-doc Assess whether Company A should fund a 90-day AI support-agent pilot.
-\`\`\`
-
-It may also be selected automatically for matching research-writing tasks. The Skill has no mandatory tool or MCP dependency.
-
-## Socrates.CS: optional falsification interface
-
-Socrates.CS is **not** a dependency. \`yichen_doc\` owns the research, document, and decision workflow. If Socrates.CS exists in the environment, use it after drafting to challenge causal links, hidden assumptions, missing counterevidence, and overconfident recommendations. If it does not exist, run the same falsification questions manually. See [references/SOCRATES_CS_INTEGRATION.md](references/SOCRATES_CS_INTEGRATION.md).
-
-## Evidence and calculation discipline
-
-- Critical claims use Level A or B evidence; Level C supports context or trends; Level D is labeled as a company claim; Level E is only a lead or sentiment signal.
-- Every material statement is distinguishable as FACT, INTERNAL DATA, ASSUMPTION, CALCULATION, JUDGMENT, or RECOMMENDATION.
-- Forecasts and ROI use Bear/Base/Bull cases, variable ranges, formula visibility, and sensitivity—not one-point certainty.
-- Recommendations identify an action, owner, timeline, resource/budget, KPI, and stop/go condition.
-
-## Examples and acceptance cases
-
-The examples use Company A/B and hypothetical values only:
+Examples use Company A/B and hypothetical inputs:
 
 - [Industry research](examples/industry_research.md)
 - [Due diligence](examples/due_diligence.md)
 - [Business case](examples/business_case.md)
 - [AI research](examples/ai_research.md)
 
-Behavioral tests are in [tests/](tests/); they evaluate decision quality and anti-overclaim behavior rather than exact wording.
+Acceptance cases are in [tests/](tests/). They test evidence discipline, routing, Socrates opt-in behavior, anti-AI writing, thesis handling, resume safeguards, and technical terminology.
 
-## Limitations
+## Installation and use in Codex
 
-This Skill improves structure and research discipline; it does not create evidence that has not been collected, replace legal/accounting/investment advice, or guarantee a decision outcome. Source access, primary-data availability, and authorized internal data still determine what can be concluded.
+### Personal Skill on Windows
+
+From the directory containing this repository:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.agents\skills"
+Copy-Item -Recurse -Force .\yichen_doc "$env:USERPROFILE\.agents\skills\yichen_doc"
+```
+
+Restart Codex if the Skill does not appear immediately. User-scoped Skills are discovered under `$HOME/.agents/skills`; repository-scoped Skills belong in `.agents/skills`.
+
+### Repository-scoped installation
+
+Copy the directory into a target repository as:
+
+```text
+<repo>/.agents/skills/yichen_doc/
+```
+
+The included `AGENTS.md` demonstrates how to make yichen_doc the repository's default for substantive external-facing writing. Do not copy it into a repository unless that default is wanted there.
+
+## Limits
+
+The Skill improves research and writing discipline; it cannot create missing evidence, replace professional advice, or guarantee an outcome. Source access, primary-data availability, and authorized internal information determine what can be concluded.
 
 ## License
 

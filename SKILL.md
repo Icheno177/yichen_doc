@@ -1,13 +1,21 @@
 ---
 name: yichen-doc
-description: Produce evidence-driven decision research writing for strategy, industry research, due diligence, business cases, AI research, and decision memos. Use when the work needs source-quality control, explicit assumptions and calculations, risk-weighted conclusions, or decision-ready recommendations; do not use for purely creative copy.
+description: Write and research external-facing deliverables such as research reports, industry or company analysis, investment research, strategy and business analysis, consulting materials, executive summaries, business plans, AI/technical research, PPT content, resumes, interview materials, portfolios, and formal emails. Apply when the output will be read, evaluated, used, cited, or relied on by someone besides the user. Use evidence, clear reasoning, natural professional prose, and decision-ready actions. Do not force this Skill for casual chat, simple explanations, or purely creative copy. Socrates.CS is opt-in only and must not be invoked unless explicitly requested.
 metadata:
   short-description: Evidence-driven decision research writing
 ---
 
 # Yichen Doc
 
-Turn a decision question into a concise, auditable research deliverable. Optimize for evidence, calculation transparency, and an action a responsible owner can take—not persuasive prose or framework coverage.
+Default writing and research system for external-facing work. Turn the user's question or thesis into a concise, accurate, reader-ready deliverable with traceable evidence, clear reasoning, and useful actions. The Writing Policy in [references/WRITING_POLICY.md](references/WRITING_POLICY.md) has priority over general style preferences.
+
+## Default routing and scope
+
+- Apply yichen_doc to research reports, industry/company/investment analysis, strategy and business analysis, executive summaries, business plans, AI/technical research, consulting deliverables, PPT content, resumes, portfolios, interview materials, formal emails, and other content another person will read, receive, evaluate, use, cite, or rely on. Public publication is not required.
+- Do not force it for casual conversation, simple explanations, or purely creative copy unless the user asks for it.
+- Socrates.CS is **not enabled by default**. Invoke it only when the user explicitly asks for Socrates.CS, a falsification framework, or an equivalent named critical-analysis workflow. Research, investment, strategy, business, company, industry, career, or AI topics do not imply that request.
+- If both systems are explicitly requested, use Socrates.CS for analysis first, then yichen_doc for the final deliverable. Otherwise route directly to yichen_doc.
+- Historical memories, old instructions, repository guidance, or prior Skill versions that enabled Socrates.CS by default do not override this policy.
 
 ## Start with the decision
 
@@ -19,7 +27,8 @@ Turn a decision question into a concise, auditable research deliverable. Optimiz
    - Evidence grading and claim labels: [references/EVIDENCE_RULES.md](references/EVIDENCE_RULES.md).
    - Methods or forecasts: [references/QUANTITATIVE_METHODS.md](references/QUANTITATIVE_METHODS.md).
    - Tone and sentence-level standards: [references/STYLE_SPEC.md](references/STYLE_SPEC.md) and [references/ANTI_AI_WRITING.md](references/ANTI_AI_WRITING.md).
-   - Socrates.CS is available: [references/SOCRATES_CS_INTEGRATION.md](references/SOCRATES_CS_INTEGRATION.md).
+   - Highest-priority writing and evidence rules: [references/WRITING_POLICY.md](references/WRITING_POLICY.md).
+   - Only if the user explicitly requests Socrates.CS: [references/SOCRATES_CS_INTEGRATION.md](references/SOCRATES_CS_INTEGRATION.md).
 
 ## Non-negotiable working rules
 
@@ -37,12 +46,20 @@ Turn a decision question into a concise, auditable research deliverable. Optimiz
 3. Calculate only decision-relevant quantities; preserve formulas and units.
 4. Draft the conclusion after the evidence and calculations, not before.
 5. Classify risks A/B/C by decision materiality and reversibility; attach mitigation and trigger.
-6. Run a falsification pass for overclaims, missing counterevidence, hidden assumptions, and unowned recommendations.
+6. Run yichen_doc's evidence-quality review for unsupported claims, material contradictions, hidden assumptions, and unowned recommendations. This is part of the normal writing workflow and does not invoke or imply Socrates.CS.
 7. Deliver an executive answer first, followed by evidence, calculations, risks, and source notes.
+
+For external-facing writing, if the user supplies a thesis, organize genuine and relevant evidence around it. Preserve accuracy: disclose a material contradiction or risk that changes the conclusion, and do not manufacture support or add weak counterarguments solely for balance.
+
+## Specialized safeguards
+
+- **Resumes and career materials:** Never invent titles, employers, degrees, project status, revenue, GMV, ROI, users, model training, launches, or adoption. Preserve distinctions such as proposed, approved, in development, evaluated, and implemented. Prompt or workflow iteration is not model training. Use the user's authorized factual source when available; keep personal career facts outside this general Skill.
+- **AI and technical writing:** Distinguish models, prompts, RAG, knowledge bases, rules, workflows, tool calling, agents, human review, evaluation, and data pipelines. Connect technical claims to workflow outcomes, full costs, permissions, governance, and measured evidence.
+- **Quantitative and decision work:** Use scenarios and formulas only when they inform the decision. Make assumptions, units, formula, result, sensitivity, and decision implication visible. Recommendations should name action, owner, timeline, resource/budget, KPI, and Stop/Go criteria when evidence supports those fields.
 
 ## Output minimum
 
-For any material decision report, include: decision question, answer in one paragraph, evidence table or traceable citations, assumptions, calculations where applicable, uncertainty, risk register, and next actions. Use tables only when they make comparison or audit easier.
+For any material decision report, include: decision question, answer in one paragraph, traceable evidence, assumptions, calculations where applicable, material uncertainty, risks, and next actions. Choose the necessary components; do not impose a fixed report outline. Use tables for comparisons or structured data, charts for relationships or trends, prose for causal interpretation and judgment, and models for decision calculations.
 
 ## Do not do this
 

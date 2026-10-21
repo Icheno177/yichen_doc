@@ -17,13 +17,13 @@ Never silently convert one label into another.
 
 | Level | Typical sources | Allowed use |
 | --- | --- | --- |
-| A | Regulators, government, company formal announcements and financial reports, SEC/exchange filings, courts/administrators, formal technical documentation, primary databases | Critical facts, legal/financial status, official product behavior. |
-| B | Peer-reviewed research, universities/institutions, high-quality technical papers, reputable industry databases | Critical analytical support and validated methods. |
-| C | Broker research, consulting, professional research, authoritative media | Context, market trends, cross-checking; do not make it sole proof of a critical fact. |
-| D | Company PR, marketing, interviews | The issuer's own claim, explicitly attributed. |
-| E | General media, blogs, forums, Zhihu, Reddit, social media | Lead generation and sentiment only; never a critical claim. |
+| A | Primary sources and direct records: original datasets, direct observations, formal technical documentation, primary databases, original research | Direct support for the specific fact or method the source actually records. |
+| B | Regulatory, government, court, exchange, and formal filing sources | Critical facts about law, regulation, status, or reported results within the filing's scope. |
+| C | Company official, audited, and investor materials | Company statements and reported operating/financial information, clearly attributed and checked against scope/date. |
+| D | High-quality academic, brokerage, consulting, industry, and professional research | Analytical context, estimates, methods, and trend evidence; avoid making it sole proof of a critical fact. |
+| E | Secondary media, blogs, forums, community posts, and social media | Leads and sentiment only; never sole support for a critical claim. |
 
-Critical factual claims require A or B. Use C for trend context. Quote D as a claim by its issuer. Use E only to identify a question worth verifying.
+Use A–C evidence for critical claims when the source directly supports the statement. Apply source-specific limitations: company materials prove what the company reported, not independent validation; research estimates are not measured company outcomes. Use D for context and cross-checking. Use E only to identify a question worth verifying.
 
 ## 3. Evidence ledger
 
