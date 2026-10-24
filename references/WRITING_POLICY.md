@@ -1,55 +1,39 @@
-# Default Writing Policy
+# Writing and Evidence Policy
 
-This policy takes priority over general style preferences and older guidance in memories, repository instructions, prompts, or earlier Skill versions.
+This policy governs yichen_doc research and external-facing deliverables. The shared content contract and renderers carry source references and evidence types into the selected output format; formatting does not change the meaning or reliability of the evidence.
 
-## Routing
+## Routing and thesis handling
 
-`yichen_doc` is the default writing and research system for external-facing work: any content another person besides the user may read, receive, evaluate, use, cite, or rely on. Publication is not required. This includes research, industry and company analysis, investment work, strategy, business analysis, executive summaries, business plans, consulting deliverables, AI/technical research, PPT content, resumes, portfolios, interview materials, formal emails, work documents, client materials, and management materials.
+Use yichen_doc for any content another person may read, receive, evaluate, use, cite, or rely on. Public publication is not required. This includes research, company and industry analysis, investment work, strategy, business analysis, executive summaries, plans, consulting material, AI/technical research, presentations, resumes, portfolios, formal emails, and work documents. Do not force it for casual chat or simple explanations.
 
-Do not force the Skill for casual chat, simple explanations, or purely creative copy unless requested.
+When the user gives a thesis, organize genuine and relevant evidence around it. Never invent facts, data, cases, citations, company details, or findings; alter evidence to fit a thesis; or present speculation as fact. Disclose a contradiction, counterexample, or risk when it materially affects accuracy or a decision. Do not add weak objections solely for appearance.
 
-## Socrates.CS is opt-in only
+## Evidence and data
 
-Socrates.CS is **not enabled by default**. Invoke it only when the user explicitly requests Socrates.CS, a falsification framework, or an equivalent named critical-analysis workflow. A subject being strategic, commercial, investment-related, research-heavy, or suitable for challenge is not an explicit request.
+Distinguish FACT, INTERNAL DATA, ASSUMPTION, CALCULATION, JUDGMENT, and RECOMMENDATION when ambiguity could change a decision. Record source, source grade, date, period, unit, denominator, limitation, and inference bridge as needed. Prefer primary and official records, regulators, government sources, company filings, audited or investor material, and high-quality research.
 
-Do not infer permission from old memories, historical prompts, repository instructions, or previous Skill versions. Ordinary research and writing route directly to yichen_doc. If the user explicitly requests both systems, use Socrates.CS for analysis first, then yichen_doc for the final output. Do not invoke Socrates.CS automatically or as a fallback when it is unavailable; yichen_doc's own evidence-quality checks remain part of its workflow.
+Grade material sources A–E. Critical claims require strong evidence; do not promote weak evidence into proof. State “公开资料未披露”, “N/A”, “Missing Data”, or an equivalent direct statement when support is absent. Unknown numeric inputs remain blank rather than zero. A metric, registration record, benchmark, funding event, or correlation does not establish a business outcome by itself.
 
-## Thesis and evidence
+Use quantitative methods only when they can change the decision. Show assumptions, units, formulas, outputs, sensitivity, and decision implication. For forecasts and ROI, use Bear/Base/Bull where useful. State when evidence cannot support precise results. The workbook must distinguish external references, inputs, and formulas.
 
-When the user gives a thesis for an external-facing document, find and organize genuine, relevant, verifiable support for it. Never invent facts, data, cases, citations, company details, or findings; alter evidence to fit the thesis; or present speculation as fact. Mark missing evidence plainly, for example: “公开资料未披露”, “N/A”, “Missing Data”, or “当前材料无法支持该结论”.
+## Decision logic and actions
 
-Do not add opposing views mechanically for the appearance of balance. Disclose a contradiction, counterexample, or risk when it materially affects accuracy, the main conclusion, or a significant decision. Do not hide or distort such evidence to support the user's position.
+Use the shortest useful chain: research question → evidence → structure → quantitative analysis where relevant → judgment → recommendation → execution. Frameworks are tools; include one only when it changes the priority, recommendation, or execution.
 
-Label material statements where ambiguity matters: FACT, INTERNAL DATA, ASSUMPTION, CALCULATION, JUDGMENT, and RECOMMENDATION. Identify the source, date, period, unit, denominator, limitations, and inference bridge as needed. Never treat a proxy as proof of an outcome.
+Recommendations name the action, owner, timeline, budget/resource, KPI, and stop/go condition when evidence supports those details. Surface key risks with materiality, reversibility, trigger, and mitigation. Do not imply that a generic analysis framework independently verifies the underlying data.
 
-## Research and decision logic
+## Direct, natural writing
 
-Use the shortest useful chain:
+Use explicit subjects, active verbs, and informative headings. Prefer facts and numbers over adjectives, outcomes over narration, and direct conclusions over template language. Keep one main point per paragraph.
 
-`Research Question → Facts & Evidence → Structured Decomposition → Quantitative Analysis / Business Model → Judgment → Decision Recommendation → Execution`
+Avoid empty narration such as “本文认为”, “本报告认为”, “接下来我们将”, “综合以上分析”, “值得注意的是”, “可以看到”, and “不难发现”. Avoid defensive contrast templates such as “不是X而是Y” when a direct statement is available. Avoid unsupported hedging and promotional language. Use conditional wording when uncertainty is real, identify its source, and state which evidence is unavailable.
 
-Skip stages or sections that do not help answer the question. Facts, evidence, structure, analysis, judgment, and decision are useful components, not a mandatory table of contents.
+## Career and AI safeguards
 
-Prefer primary and official sources, regulatory or government material, company filings, audited or investor materials, and high-quality research. State when evidence is missing or conflicting. For forecasts, use Bear/Base/Bull when useful and show `Assumptions → Formula → Result → Sensitivity → Decision Implication`. Use quantitative methods only when they can change the decision; make formulas and units reproducible.
+Never invent a title, employer, degree, project status, revenue, GMV, ROI, user count, model training, launch, or adoption result. Distinguish completed, approved, initiated, in development, proposed, evaluated, management reviewed, and implemented. Prompt or workflow iteration is not model training. Keep personal career facts in a separate authorized source.
 
-Technical analysis must connect to business outcomes, total cost, operating constraints, human review, permissions, and governance. Recommendations should specify Action, Owner, Timeline, Budget/Resource, KPI, and Stop/Go criteria when the available evidence supports those details.
+Distinguish models, prompts, retrieval-augmented generation, knowledge bases, rules, workflows, tool use, agents, human review, evaluation, and data pipelines. Technical analysis connects the proposed system to business outcomes, cost, operating constraints, permissions, review, evaluation, and governance.
 
-## Anti-AI writing
+## Output choices
 
-Write in direct, natural, professional language with explicit subjects and active verbs. Prefer numbers over adjectives, facts over rhetoric, outcomes over process descriptions, and informative headings over generic labels. Keep one main point per paragraph. Match content to its best format: tables for comparisons, charts for trends or relationships, prose for causality and judgment, and models for decision calculations.
-
-Avoid templated contrast formulas such as “不是 X，而是 Y”, “并非 X，而是 Y”, “不仅 X，更是 Y”, “真正的问题不是 X，而是 Y”, and mechanical “Not X, but Y” phrasing when a direct statement is natural. Do not evade the rule by swapping synonyms; state the main point directly.
-
-Do not insert AI identity disclaimers into formal research output: “AI认为/判断/分析”, “模型认为/判断”, “本文由AI生成/推演”, “作为AI”, or “根据AI分析”.
-
-Avoid unsupported hedges, including “可能”, “或许”, “大概”, “似乎”, “一定程度上”, “初步判断”, “倾向认为”, “有望”, “预计可能”, “仍需验证”, and “仅供参考”. Use conditional wording when the uncertainty is real, identify its source, and say what evidence is unavailable.
-
-Avoid empty narration such as “本文认为”, “本报告认为”, “接下来我们将”, “综合以上分析”, “值得注意的是”, “不可忽视的是”, “从某种程度上而言”, “可以看到”, “不难发现”, “显而易见”, and “众所周知”. Avoid unsupported marketing language such as “重新定义”, “重塑未来”, “范式跃迁”, “赋能千行百业”, “开启新篇章”, “构建全新生态”, “颠覆式创新”, or “时代洪流”. Keep a phrase only when a concrete fact, policy analysis, or mechanism requires it.
-
-## Resume and career safeguards
-
-Never invent a title, employer, degree, project status, revenue, GMV, ROI, user count, model training, launch status, or adoption result. Distinguish completed, approved, initiated, in development, proposed, evaluated, management reviewed, and implemented. Prompt or workflow iteration is not model training. A resume bullet should connect the business problem, action or method, scale, and result or decision impact. Quantify only when source material supports it. Keep personal career facts in a separate authorized factual source; this general Skill contains methodology only.
-
-## AI and technical terminology
-
-Distinguish Model, Prompt, RAG, Knowledge Base, Rules, Workflow, Tool Calling, Agent, Human-in-the-loop, Evaluation, and Data Pipeline. Do not label all AI work as model training. Evaluate an enterprise AI scenario from business problem and value through data, workflow, model/rules, integration, permissions, human review, evaluation, TCO/ROI, and governance.
+Choose the necessary report sections and formats. DOCX supports long-form reading; PPTX supports decisions and presentations; XLSX preserves inputs and formulas; HTML supports navigation, filtering, and browser reading. Do not generate all formats unless asked. Maintain a shared content source for facts and core metrics when multiple formats are requested.

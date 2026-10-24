@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "title": "睡眠健康产品试点研究",
+    "subtitle": "示例内容包 · 所有公司与数值均为虚构",
+    "date": "2026-10-25",
+    "language": "zh-CN",
+    "audience": "管理层",
+    "confidentiality": "示例材料",
+    "theme": {"font": "Microsoft YaHei", "primary": "202124", "accent": "A92332", "muted": "5E6268"}
+  },
+  "decision": {
+    "question": "是否启动为期90天的用户体验试点？",
+    "answer": "建议先完成安全审查和用户研究，再开展小规模试点；只有退款、贡献毛利和客诉达到预设门槛，才扩大投入。",
+    "owner": "产品负责人",
+    "deadline": "2026-12-31",
+    "scope": "演示用假设内容",
+    "consequence_of_error": "演示材料不代表实际决策或经营数据"
+  },
+  "sources": [
+    {"id":"S-01","title":"示例调查摘要","organization":"示例研究组","date":"2026-10-01","grade":"C","url":"https://example.invalid/survey","limitations":"虚构来源，仅用于演示数据结构"}
+  ],
+  "metrics": [
+    {"id":"M-01","label":"假设成交收入","value":1800,"unit":"元/单","period":"示例","source_id":"S-01","evidence_type":"ASSUMPTION"},
+    {"id":"M-02","label":"假设单台变动成本","value":1000,"unit":"元/单","period":"示例","source_id":"S-01","evidence_type":"ASSUMPTION"},
+    {"id":"M-03","label":"假设履约与渠道费用","value":250,"unit":"元/单","period":"示例","source_id":"S-01","evidence_type":"ASSUMPTION"},
+    {"id":"M-04","label":"假设单台贡献","value":null,"unit":"元/单","period":"示例","evidence_type":"CALCULATION"},
+    {"id":"M-05","label":"假设体验评分","value":4.2,"unit":"分/5分","period":"示例","source_id":"S-01","evidence_type":"ASSUMPTION"}
+  ],
+  "calculations": [
+    {"id":"C-01","label":"示例单台贡献","formula":"成交收入 - 单台变动成本 - 履约与渠道费用","excel_formula":"=IFERROR(Inputs!C2-Inputs!C3-Inputs!C4,\"\")","input_ids":["M-01","M-02","M-03"],"output_metric_id":"M-04","unit":"元/单","source_ids":["S-01"],"limitations":"仅为演示假设，不能视为真实经营结果。"}
+  ],
+  "assumptions": ["示例中的数值均为虚构，不应作为真实市场结论。"],
+  "sections": [
+    {
+      "id":"market-evidence",
+      "title":"用户体验证据",
+      "conclusion":"小样本体验反馈可以帮助设计后续测试，不能代表市场渗透率。",
+      "blocks":[
+        {"type":"paragraph","label":"假设","evidence_type":"ASSUMPTION","text":"示例调查反馈积极；样本很小，且由体验活动招募。","source_ids":["S-01"]},
+        {"type":"metric","label":"假设体验评分","value":4.2,"unit":"分/5分","source_ids":["S-01"]},
+        {"type":"table","label":"示例对比","headers":["方案","成本（元）","备注"],"rows":[["基础版","1000","虚构参数"],["升级版","1500","虚构参数"]],"source_ids":["S-01"]},
+        {"type":"chart","label":"假设试点成本对比","chart_type":"bar","categories":["基础版","升级版"],"series":[{"name":"成本","values":[1000,1500]}],"unit":"元","source_ids":["S-01"]},
+        {"type":"formula","label":"示例单台贡献","formula":"成交收入 - 单台变动成本 - 履约与渠道费用；示例工作簿保留可编辑公式。","evidence_type":"CALCULATION"},
+        {"type":"callout","label":"决策门槛","text":"先确定退款、贡献毛利和客诉门槛，再启动扩大投入。","evidence_type":"RECOMMENDATION"}
+      ]
+    }
+  ]
+}

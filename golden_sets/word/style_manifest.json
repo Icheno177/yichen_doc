@@ -1,0 +1,255 @@
+{
+  "system": "yichen_doc",
+  "source": {
+    "reference_type": "user-selected private DOCX",
+    "source_path_recorded": false,
+    "content_copied": false
+  },
+  "document": {
+    "sections": [
+      {
+        "page_width_in": 8.268,
+        "page_height_in": 11.693,
+        "orientation": "PORTRAIT (0)",
+        "margins_in": {
+          "top": 1.0,
+          "bottom": 1.0,
+          "left": 1.25,
+          "right": 1.25
+        },
+        "different_first_page_header_footer": false
+      }
+    ]
+  },
+  "style_usage": [
+    {
+      "value": "Normal",
+      "count": 350
+    },
+    {
+      "value": "toc 2",
+      "count": 32
+    },
+    {
+      "value": "toc 3",
+      "count": 32
+    },
+    {
+      "value": "Heading 2",
+      "count": 32
+    },
+    {
+      "value": "Heading 3",
+      "count": 32
+    },
+    {
+      "value": "toc 1",
+      "count": 9
+    },
+    {
+      "value": "Heading 1",
+      "count": 9
+    },
+    {
+      "value": "Heading 4",
+      "count": 5
+    },
+    {
+      "value": "TOC 标题1",
+      "count": 1
+    }
+  ],
+  "effective_format_frequency_by_text_characters": {
+    "font": [
+      {
+        "value": "inherited",
+        "count": 30359
+      },
+      {
+        "value": "华文楷体",
+        "count": 537
+      }
+    ],
+    "size_pt": [
+      {
+        "value": "inherited",
+        "count": 30359
+      },
+      {
+        "value": "15.0",
+        "count": 278
+      },
+      {
+        "value": "10.0",
+        "count": 198
+      },
+      {
+        "value": "18.0",
+        "count": 50
+      },
+      {
+        "value": "7.5",
+        "count": 11
+      }
+    ],
+    "color": [
+      {
+        "value": "inherited",
+        "count": 28191
+      },
+      {
+        "value": "000000",
+        "count": 2051
+      },
+      {
+        "value": "FFFFFF",
+        "count": 526
+      },
+      {
+        "value": "C00000",
+        "count": 128
+      }
+    ],
+    "bold": [
+      {
+        "value": "inherited",
+        "count": 30576
+      },
+      {
+        "value": "True",
+        "count": 320
+      }
+    ]
+  },
+  "paragraph_format_frequency": {
+    "alignment": [
+      {
+        "value": "None",
+        "count": 492
+      },
+      {
+        "value": "CENTER (1)",
+        "count": 8
+      },
+      {
+        "value": "RIGHT (2)",
+        "count": 2
+      }
+    ],
+    "first_line_indent_pt": [],
+    "line_spacing": [
+      {
+        "value": "1.0",
+        "count": 1
+      }
+    ]
+  },
+  "style_definitions": {
+    "Normal": {
+      "font_latin": "Times New Roman",
+      "font_size_pt": 14.0,
+      "bold": null,
+      "italic": null,
+      "color": null,
+      "east_asia_font": "华文楷体",
+      "space_before_pt": null,
+      "space_after_pt": 8.0,
+      "line_spacing": 1.1583333333333334,
+      "first_line_indent_pt": null
+    },
+    "Title": {
+      "font_latin": null,
+      "font_size_pt": 28.0,
+      "bold": null,
+      "italic": null,
+      "color": null,
+      "east_asia_font": null,
+      "space_before_pt": null,
+      "space_after_pt": 4.0,
+      "line_spacing": null,
+      "first_line_indent_pt": null
+    },
+    "Heading 1": {
+      "font_latin": null,
+      "font_size_pt": 18.0,
+      "bold": true,
+      "italic": null,
+      "color": null,
+      "east_asia_font": null,
+      "space_before_pt": 24.0,
+      "space_after_pt": 4.0,
+      "line_spacing": null,
+      "first_line_indent_pt": null
+    },
+    "Heading 2": {
+      "font_latin": null,
+      "font_size_pt": 15.0,
+      "bold": true,
+      "italic": null,
+      "color": null,
+      "east_asia_font": null,
+      "space_before_pt": 8.0,
+      "space_after_pt": 4.0,
+      "line_spacing": null,
+      "first_line_indent_pt": null
+    },
+    "Heading 3": {
+      "font_latin": null,
+      "font_size_pt": null,
+      "bold": null,
+      "italic": null,
+      "color": "002060",
+      "east_asia_font": null,
+      "space_before_pt": 8.0,
+      "space_after_pt": 4.0,
+      "line_spacing": null,
+      "first_line_indent_pt": null
+    },
+    "Heading 4": {
+      "font_latin": null,
+      "font_size_pt": null,
+      "bold": null,
+      "italic": null,
+      "color": "2F5597",
+      "east_asia_font": null,
+      "space_before_pt": 4.0,
+      "space_after_pt": 2.0,
+      "line_spacing": null,
+      "first_line_indent_pt": null
+    }
+  },
+  "ooxml": {
+    "document_defaults": {
+      "latin_font": null,
+      "east_asia_font": null,
+      "font_size_half_points": null
+    },
+    "theme_fonts": {
+      "majorFont": {
+        "latin": "等线 Light",
+        "eastAsia": ""
+      },
+      "minorFont": {
+        "latin": "等线",
+        "eastAsia": ""
+      }
+    },
+    "direct_format_summary": {
+      "east_asia_font_overrides": [],
+      "font_size_half_points": [
+        {
+          "value": "None",
+          "count": 443
+        }
+      ],
+      "color_overrides": [
+        {
+          "value": "None",
+          "count": 151
+        }
+      ]
+    },
+    "table_borders": [],
+    "table_cell_margins": []
+  }
+}
