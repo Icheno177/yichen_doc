@@ -1,6 +1,9 @@
-.DS_Store
-Thumbs.db
-*.swp
-*.tmp
-.idea/
-.vscode/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+node_modules/
+outputs/
+.venv/

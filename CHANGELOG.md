@@ -1,16 +1,13 @@
 # Changelog
 
-All notable changes to this project are documented here.
+## 2.0.0 - 2026-10-25
 
-## 0.2.0 - 2026-10-21
-
-- Established a highest-priority default writing policy for external-facing research and deliverables.
-- Made Socrates.CS explicit-request only and removed automatic/manual fallback language that implied invocation.
-- Expanded triggers, README, repository AGENTS guidance, resume/AI safeguards, and regression acceptance cases.
-- Preserved the instruction-first installation, existing examples, and evidence/calculation workflows.
+- Added a shared, versioned research content contract and runtime validator.
+- Added independent DOCX, native PptxGenJS PPTX, XLSX, and HTML renderers.
+- Added a command-line builder, output package checks, live workbook formulas, source references, sample content, and end-to-end tests.
+- Added Word and PowerPoint Golden Set manifests/audits and clean, editable production templates.
+- Preserved the research evidence, writing, quantitative, resume, and technical-terminology guidance while separating it from file rendering.
 
 ## 0.1.0 - 2026-09-21
 
-- Initial instruction-first Skill for evidence-driven decision research writing.
-- Added evidence levels, calculation guidance, report routes, anti-overclaim rules, anonymized examples, and behavioral acceptance cases.
-- Added optional Socrates.CS falsification integration.
+- Established evidence-led research routes, writing standards, quantitative methods, anonymized examples, and behavior acceptance cases.

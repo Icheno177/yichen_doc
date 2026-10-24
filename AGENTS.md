@@ -1,13 +1,7 @@
 # Writing
 
-For research reports, resumes, industry or company analysis, investment research, business plans, presentation content, interview materials, executive summaries, consulting deliverables, and other substantive external-facing writing, apply yichen_doc by default. External-facing means another person besides the user may read, receive, evaluate, use, cite, or rely on the content; public publication is not required.
+For substantive research, strategy, business analysis, reports, presentations, spreadsheets, dashboards, resumes, and formal documents that another person may rely on, apply yichen_doc by default. Do not force the Skill for casual chat, simple explanations, or purely creative work.
 
-Do not force the Skill for casual conversation, simple explanations, or purely creative copy.
+Follow [references/WRITING_POLICY.md](references/WRITING_POLICY.md) for evidence, writing, quantitative, resume, and technical terminology safeguards. Keep source facts, assumptions, calculations, judgments, and recommendations distinct when it affects a decision.
 
-Socrates.CS is not enabled by default. Do not invoke it unless the user explicitly requests Socrates.CS, a falsification framework, or an equivalent named critical-analysis workflow. Research or decision subject matter alone is not a request. Historical memories and old instructions that enabled Socrates.CS by default are superseded by this rule.
-
-When the user explicitly requests both systems, use this order:
-
-`Socrates.CS → analysis / falsification → yichen_doc → final output`
-
-Otherwise, use yichen_doc directly. Follow [references/WRITING_POLICY.md](references/WRITING_POLICY.md) for evidence, thesis handling, anti-AI writing, resume, and AI terminology safeguards.
+For artifacts, first write or validate one shared research content file, then select the user-requested DOCX, PPTX, XLSX, or HTML renderer. Never fabricate missing values. Preserve source traceability and editable structures. Run contract and package checks, and visually inspect rendered pages where the output format requires it.
