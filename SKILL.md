@@ -31,6 +31,16 @@ Keep research facts, content, data definitions, renderers, and QA separate. A sh
 
 Never fabricate missing inputs. Keep unknown values blank and state why they are missing. A renderer does not upgrade the source quality of its content.
 
+## Audit existing or generated deliverables
+
+Use `yichen_doc audit <audit_manifest.json> --out <audit_outputs>` when the user requests a quality audit, source-to-output completeness review, evidence/model verification, cross-format comparison, or page-level visual QA. Do not run expensive full audits automatically for casual tasks or simple edits.
+
+Keep these checks separate: original source → revised document; revised document → presentation; evidence → claim; model inputs → calculations → outputs; and file → rendered pages plus human visual review. Exact text, normalized text, numeric/conflict checks, lexical candidates, merge/split candidates, and visualized items are different dispositions. Similarity is a review lead, not proof. Record scope, method, denominator, input hashes, limitations, and unrun checks.
+
+Missing mappings, unresolved critical evidence/model findings, unresolved same-scope QA conflicts, absent renderings, or missing human page approvals must prevent a full `PASS`. See [references/QUALITY_ASSURANCE.md](references/QUALITY_ASSURANCE.md) and [references/AUDIT_ACCEPTANCE.md](references/AUDIT_ACCEPTANCE.md).
+
+Current limits: claim extraction requires an explicit claim ledger; URL reachability does not prove claim support; arbitrary Excel formulas are inventoried but not recalculated; machine rendering never means human visual approval. See the audit references for format-specific coverage.
+
 ## Generate deliverables
 
 Install Python dependencies and Node dependencies from the repository root, then run:

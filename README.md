@@ -11,6 +11,7 @@
 - Renders XLSX with README, Sources, Inputs, Calculations, Scenarios, Sensitivity, Dashboard, and QA sheets.
 - Renders HTML with responsive styling, section navigation, sortable/filterable table text, source links, charts, and print styles.
 - Validates content references, units and series lengths, package structure, and build outputs.
+- Adds a separate Audit Engine V2 for staged content mapping, evidence/model ledgers, package checks, QA conflict reconciliation, and rendered-page review.
 
 The system name and repository remain `yichen_doc`. Four-format support does not mean every task must generate four deliverables.
 
@@ -26,6 +27,20 @@ yichen_doc build examples/sample_research.json --formats docx,pptx,xlsx,html --o
 ```
 
 To generate only one or two formats, pass just those formats. You can also use `python -m yichen_doc` instead of the installed command. The sample is clearly marked as fictional and serves as a renderer demonstration.
+
+Install optional audit-format readers when needed: `python -m pip install -e ".[audit]"`. HTML browser checks additionally need an installed Playwright Chromium browser; without it, browser rendering is reported `BLOCKED`.
+
+## Audit existing deliverables
+
+Create a private JSON manifest listing the original source, revised document and final presentation, plus optional claim/model ledgers and rendered pages. Then run:
+
+```powershell
+yichen_doc audit audit_manifest.json --out audit_outputs
+```
+
+The engine keeps source→revision, revision→presentation, evidence→claim, model inputs→outputs, and file→rendered pages as separate checks. It writes a source-unit mapping, issue register, check registry, model/evidence outputs, QA reconciliation and remediation plan. Similarity candidates are not proof of retention. Windows PowerPoint can render slides when available; pages stay `REVIEW_REQUIRED` until a named reviewer signs each page.
+
+Keep private manifests, reports, source files, model inputs and renders outside public commits. See [QUALITY_ASSURANCE.md](references/QUALITY_ASSURANCE.md), [CONTENT_INTEGRITY_AUDIT.md](references/CONTENT_INTEGRITY_AUDIT.md), [EVIDENCE_AUDIT.md](references/EVIDENCE_AUDIT.md), [MODEL_AUDIT.md](references/MODEL_AUDIT.md), [VISUAL_AUDIT.md](references/VISUAL_AUDIT.md), and [AUDIT_ACCEPTANCE.md](references/AUDIT_ACCEPTANCE.md).
 
 ## Architecture
 
@@ -51,9 +66,12 @@ Use [SKILL.md](SKILL.md) and [references/WRITING_POLICY.md](references/WRITING_P
 
 ```powershell
 python -m unittest discover -s tests -v
+python -m pytest -q
 ```
 
 The test suite validates the shared contract, source references, renderer structure, editable native objects, formulas, and document links. Visual output still needs review in its real reader: open Word, PowerPoint, Excel, and a browser; render all presentation pages and inspect the contact sheet. An artifact existing or passing a structural test does not prove final visual quality.
+
+Audit outcomes are `PASS`, `PASS_WITH_WARNINGS`, `FAIL`, or `BLOCKED`. Missing ledgers, unresolved mappings, unavailable rendering, or missing human approvals prevent a full `PASS`.
 
 ## License
 

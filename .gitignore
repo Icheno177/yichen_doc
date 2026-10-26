@@ -6,4 +6,10 @@ build/
 dist/
 node_modules/
 outputs/
+audit_outputs/
+audit_manifest*.json
+audit_working/
+rendered_pages/
+visual_audit/
+*.audit.png
 .venv/
