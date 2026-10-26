@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add consistent publisher signature `出版人：谢翊忱` to DOCX, PPTX, XLSX, and HTML outputs, with Office creator metadata where supported.
+
+
 ## 2.0.0 - 2026-10-25
 
 - Added a shared, versioned research content contract and runtime validator.

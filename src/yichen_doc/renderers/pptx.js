@@ -7,7 +7,7 @@ if (!contentPath || !outputPath) throw new Error('Usage: node pptx.js content.js
 const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
 const pptx = new pptxgen();
 pptx.layout = 'LAYOUT_WIDE';
-pptx.author = content.metadata.author || 'yichen_doc';
+pptx.author = '谢翊忱';
 pptx.subject = content.decision.question;
 pptx.title = content.metadata.title;
 pptx.company = 'yichen_doc';
@@ -23,6 +23,7 @@ function base(title, eyebrow='研究内容') {
   s.addShape(pptx.ShapeType.line, { x:.55, y:1.53, w:12.22, h:0, line:{color:C.line,width:1} });
   s.addShape(pptx.ShapeType.rect, { x:.55, y:1.51, w:.52, h:.045, line:{color:C.red,transparency:100}, fill:{color:C.red} });
   s.addText(`${n}`, { x:12.15, y:7.14, w:.5, h:.2, fontFace:'Microsoft YaHei', fontSize:9, color:C.gray, align:'right', margin:0 });
+  s.addText('出版人：谢翊忱', { x:.62, y:7.12, w:2.2, h:.2, fontFace:'Microsoft YaHei', fontSize:9, color:C.gray, margin:0 });
   return s;
 }
 function table(slide, block, x=.62, y=2.0, w=12.0, h=4.55) {
@@ -72,6 +73,7 @@ function addBlock(slide,b) {
  s.addText(content.metadata.title,{x:.7,y:2.0,w:11.8,h:1.15,fontFace:'Microsoft YaHei',fontSize:34,bold:true,color:'FFFFFF',fit:'shrink',margin:0});
  s.addText(content.decision.question,{x:.72,y:3.45,w:11.6,h:.8,fontFace:'Microsoft YaHei',fontSize:20,color:'FFFFFF',fit:'shrink',margin:0});
  s.addText(content.metadata.confidentiality||'yichen_doc',{x:.72,y:6.95,w:11,h:.25,fontFace:'Microsoft YaHei',fontSize:10,color:'D7DADD',margin:0});
+ s.addText('出版人：谢翊忱',{x:.72,y:7.18,w:3.0,h:.18,fontFace:'Microsoft YaHei',fontSize:9,color:'D7DADD',margin:0});
 }
 // Executive decision slide
 {

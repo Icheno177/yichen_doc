@@ -54,6 +54,10 @@ yichen_doc build examples/sample_research.json --formats docx,pptx,xlsx,html --o
 
 Choose the requested formats, for example `--formats docx` or `--formats pptx,html`. Python users can also call `python -m yichen_doc`. The JSON contract is the renderer input; renderers do not independently change claims or calculations.
 
+### Publisher attribution
+
+Every rendered research deliverable must visibly include the exact signature **“出版人：谢翊忱”**. Apply it to DOCX page footers, every PPTX slide (including the cover), the XLSX workbook front sheet and print footers, and the HTML page footer. Set Office document creator metadata to 谢翊忱 where supported. Preserve the signature when exporting DOCX/PPTX to PDF. Do not add or alter this attribution in user-provided source files; it belongs to yichen_doc-generated outputs.
+
 For a quality check, run `python -m unittest discover -s tests -v` and inspect generated files in Word/PowerPoint/Excel and a browser. For PPTX, render every page and review the full contact sheet; structural checks do not replace visual review.
 
 ## Writing workflow

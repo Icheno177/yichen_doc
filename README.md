@@ -1,6 +1,6 @@
 # yichen_doc
 
-**Evidence-led research and four-format document production.** `yichen_doc` keeps research content separate from its DOCX, PPTX, XLSX, and HTML renderers. Build one source-backed content package, select the required output formats, and keep the resulting documents editable.
+**Evidence-led research and four-format document production.** `yichen_doc` keeps research content separate from its DOCX, PPTX, XLSX, and HTML renderers. Build one source-backed content package, select the required output formats, and keep the resulting documents editable. Every rendered deliverable visibly carries the signature **出版人：谢翊忱**; Office file metadata uses 谢翊忱 as creator where supported.
 
 ## What it does
 
