@@ -36,6 +36,8 @@ def render(content: dict, output: str | Path, base_dir: str | Path = ".") -> Pat
     theme = content.get("metadata", {}).get("theme", {})
     font = theme.get("font", "Microsoft YaHei"); accent = theme.get("accent", "A92332")
     doc = Document(); sec = doc.sections[0]
+    doc.core_properties.author = "谢翊忱"
+    doc.core_properties.last_modified_by = "谢翊忱"
     sec.top_margin = Inches(0.78); sec.bottom_margin = Inches(0.75); sec.left_margin = Inches(0.9); sec.right_margin = Inches(0.9)
     normal = doc.styles["Normal"]; normal.font.name = font; normal.font.size = Pt(10.5)
     normal._element.rPr.rFonts.set(qn("w:eastAsia"), font)
@@ -121,6 +123,6 @@ def render(content: dict, output: str | Path, base_dir: str | Path = ".") -> Pat
             if source.get("limitations"): p.add_run(f" · 限制：{source['limitations']}")
     for section in doc.sections:
         footer = section.footer.paragraphs[0]; footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        footer.add_run("yichen_doc  ·  "); _field(footer, "PAGE")
+        footer.add_run("出版人：谢翊忱  ·  yichen_doc  ·  "); _field(footer, "PAGE")
     settings=doc.settings.element; update=OxmlElement('w:updateFields'); update.set(qn('w:val'),'true'); settings.append(update)
     out.parent.mkdir(parents=True, exist_ok=True); doc.save(out); return out

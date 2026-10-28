@@ -11,6 +11,7 @@ from pathlib import Path
 from . import __version__
 from .content import load_content
 from .qa import inspect_output, write_qa_report
+from .audit.project import run_project
 from .renderers import docx, html, xlsx
 
 
@@ -58,10 +59,17 @@ def main(argv: list[str] | None = None) -> int:
     build_parser.add_argument("--out", type=Path, default=Path("outputs"))
     validate_parser = sub.add_parser("validate", help="validate a shared content contract")
     validate_parser.add_argument("content", type=Path)
+    audit_parser = sub.add_parser("audit", help="run an independent staged audit from a JSON manifest")
+    audit_parser.add_argument("manifest", type=Path, help="local JSON manifest listing source, revision and presentation files")
+    audit_parser.add_argument("--out", type=Path, default=Path("audit_outputs"))
     args = parser.parse_args(argv)
     try:
         if args.command == "validate":
             load_content(args.content); print("PASS: content contract valid"); return 0
+        if args.command == "audit":
+            result = run_project(args.manifest, args.out)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 0 if result["overall_status"] in {"PASS", "PASS_WITH_WARNINGS"} else 3
         formats = [x.strip().lower() for x in args.formats.split(",") if x.strip()]
         allowed = {"docx", "pptx", "xlsx", "html"}
         if not formats or set(formats) - allowed: raise ValueError(f"formats must be selected from {sorted(allowed)}")

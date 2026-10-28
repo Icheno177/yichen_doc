@@ -16,6 +16,10 @@ Grade material sources A–E. Critical claims require strong evidence; do not pr
 
 Use quantitative methods only when they can change the decision. Show assumptions, units, formulas, outputs, sensitivity, and decision implication. For forecasts and ROI, use Bear/Base/Bull where useful. State when evidence cannot support precise results. The workbook must distinguish external references, inputs, and formulas.
 
+For a user-requested desensitized showcase, render withheld values and evidence with a consistent mask such as `████`. The mask means redacted for display; it does not mean zero and must not be used to assert a factual unknown. Keep the real evidence status in the private ledger, preserve original files, and propagate the mask through prose, tables, formulas, charts, and exports. Calculations that depend on masked inputs remain masked; show only clearly labelled partial expressions where useful.
+
+For quantitative presentations, use Python to generate charts from traceable model/data inputs. Select chart forms by data structure and vary them when supported (line/scenario, waterfall/bridge, donut/composition, heatmap/sensitivity, funnel/conversion, etc.); do not invent trends or decorative figures. Attach a visible chart note with interpretation, unit/period, source or formula, and key assumptions/limitations.
+
 ## Decision logic and actions
 
 Use the shortest useful chain: research question → evidence → structure → quantitative analysis where relevant → judgment → recommendation → execution. Frameworks are tools; include one only when it changes the priority, recommendation, or execution.

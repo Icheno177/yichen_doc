@@ -11,9 +11,11 @@ NAVY = "202124"; RED = "A92332"; LIGHT = "F2F3F4"
 
 def render(content: dict, output: str | Path) -> Path:
     out = Path(output); wb = Workbook(); readme = wb.active; readme.title = "README"
+    wb.properties.creator = "谢翊忱"
+    wb.properties.lastModifiedBy = "谢翊忱"
     for name in ("Sources", "Inputs", "Calculations", "Scenarios", "Sensitivity", "Dashboard", "QA"):
         wb.create_sheet(name)
-    readme.append(["yichen_doc research workbook"]); readme.append(["Report", content["metadata"]["title"]]); readme.append(["Date", content["metadata"].get("date", "")]); readme.append(["Decision", content["decision"]["question"]]); readme.append(["Answer", content["decision"]["answer"]]); readme.append(["Units and evidence", "See Sources and section notes; unprovided inputs stay blank."])
+    readme.append(["yichen_doc research workbook"]); readme.append(["Publisher", "出版人：谢翊忱"]); readme.append(["Report", content["metadata"]["title"]]); readme.append(["Date", content["metadata"].get("date", "")]); readme.append(["Decision", content["decision"]["question"]]); readme.append(["Answer", content["decision"]["answer"]]); readme.append(["Units and evidence", "See Sources and section notes; unprovided inputs stay blank."])
     sources = wb["Sources"]; sources.append(["ID", "Title", "Organization", "Date", "Grade", "URL", "Limitations"])
     for s in content.get("sources", []): sources.append([s.get("id"), s.get("title"), s.get("organization"), s.get("date"), s.get("grade"), s.get("url"), s.get("limitations")])
     inputs = wb["Inputs"]; inputs.append(["Metric ID", "Label", "Value", "Unit", "Period", "Evidence Type", "Source ID"])
@@ -61,6 +63,12 @@ def render(content: dict, output: str | Path) -> Path:
                 dash.add_chart(chart, f"G{start}")
     qa = wb["QA"]; qa.append(["Check", "Status", "Details"]); qa.append(["Content contract", "PASS", "Validated before rendering"]); qa.append(["Missing numeric inputs", "Blank", "Unknown values are not converted to zero"])
     for ws in wb.worksheets:
+        ws.oddFooter.center.text = "出版人：谢翊忱"
+        ws.oddFooter.center.size = 9
+        ws.evenFooter.center.text = "出版人：谢翊忱"
+        ws.evenFooter.center.size = 9
+        ws.firstFooter.center.text = "出版人：谢翊忱"
+        ws.firstFooter.center.size = 9
         ws.freeze_panes = "A2"; ws.auto_filter.ref = ws.dimensions
         for cell in ws[1]: cell.font = Font(name="Microsoft YaHei", bold=True, color="FFFFFF"); cell.fill = PatternFill("solid", fgColor=NAVY)
         for col in ws.columns:

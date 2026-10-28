@@ -18,7 +18,7 @@ Use Chinese report conventions when writing Chinese: a precise title, one-senten
 
 Use a table for comparisons, evidence ledgers, scenarios, risks, or ownership. A table needs a decision-relevant title, unit/date, and source note.
 
-Use a chart only when it reveals a trend, distribution, trade-off, or scenario difference more clearly than a table. Do not use decorative charts. Label axes, units, period, and source; keep assumptions in the note.
+Use a chart only when it reveals a trend, distribution, trade-off, or scenario difference more clearly than a table. Do not use decorative charts. For research decks, generate statistical charts with Python from traceable values and choose multiple chart types when the data supports them; never convert a single snapshot into a time trend. Label axes, units, period, and source. Each chart must carry a visible annotation that explains its finding and states the applicable assumptions and limitations. If a displayed input is redacted, use the same `████` mask in the chart and its annotation, and do not plot it as zero.
 
 ## Recommendation form
 
