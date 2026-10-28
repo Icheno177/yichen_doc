@@ -35,6 +35,10 @@ Never fabricate missing inputs. Keep unknown values blank and state why they are
 
 When the user requests a desensitized presentation, report, workbook, or web showcase, use a consistent visible mask such as `████` for undisclosed values, identities, records, or evidence. Treat a mask as **withheld/redacted**, never as zero or as proof that a value is unknown. Preserve the underlying source and evidence status in the private source package and traceability ledger; do not alter originals. Keep masked fields consistent across prose, charts, tables, formulas, notes, and exports. A calculation depending on a masked input must remain masked or be shown only as an explicitly labelled partial expression. Never infer a complete ROI, NPV, deployment result, or other outcome from masked inputs.
 
+### Research portfolio websites
+
+When producing an offline portfolio or multi-report showcase, read [PORTFOLIO_HTML.md](references/PORTFOLIO_HTML.md). The guide covers source selection, display authorization, complete report conversion, slide preview, embedded downloads, integrity checks, and offline/browser QA. A portfolio card or executive summary does not substitute for the complete report when full reading is requested.
+
 ### Python charts and slide annotations
 
 For research presentations with quantitative evidence, create charts with Python from a traceable data table or model. Choose chart types that fit the evidence (for example lines for scenario changes, waterfall for additive bridges, donut for a reconciled composition, heatmaps for sensitivity, and funnel for conversion stages); use multiple types when the source data supports them, without inventing a time series or forcing decorative chart variety. Every chart needs a visible annotation stating the decision-relevant reading, unit and period, source/model basis, and material assumption or limitation. Keep chart notes attached to their chart in every exported format. Prefer editable PowerPoint chart or shape objects when practical.
