@@ -31,6 +31,14 @@ Keep research facts, content, data definitions, renderers, and QA separate. A sh
 
 Never fabricate missing inputs. Keep unknown values blank and state why they are missing. A renderer does not upgrade the source quality of its content.
 
+### Desensitized showcase outputs
+
+When the user requests a desensitized presentation, report, workbook, or web showcase, use a consistent visible mask such as `████` for undisclosed values, identities, records, or evidence. Treat a mask as **withheld/redacted**, never as zero or as proof that a value is unknown. Preserve the underlying source and evidence status in the private source package and traceability ledger; do not alter originals. Keep masked fields consistent across prose, charts, tables, formulas, notes, and exports. A calculation depending on a masked input must remain masked or be shown only as an explicitly labelled partial expression. Never infer a complete ROI, NPV, deployment result, or other outcome from masked inputs.
+
+### Python charts and slide annotations
+
+For research presentations with quantitative evidence, create charts with Python from a traceable data table or model. Choose chart types that fit the evidence (for example lines for scenario changes, waterfall for additive bridges, donut for a reconciled composition, heatmaps for sensitivity, and funnel for conversion stages); use multiple types when the source data supports them, without inventing a time series or forcing decorative chart variety. Every chart needs a visible annotation stating the decision-relevant reading, unit and period, source/model basis, and material assumption or limitation. Keep chart notes attached to their chart in every exported format. Prefer editable PowerPoint chart or shape objects when practical.
+
 ## Audit existing or generated deliverables
 
 Use `yichen_doc audit <audit_manifest.json> --out <audit_outputs>` when the user requests a quality audit, source-to-output completeness review, evidence/model verification, cross-format comparison, or page-level visual QA. Do not run expensive full audits automatically for casual tasks or simple edits.
